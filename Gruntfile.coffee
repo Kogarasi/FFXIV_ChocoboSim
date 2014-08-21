@@ -7,6 +7,18 @@ module.exports = (grunt) ->
 	
 	grunt.initConfig
 		
+		external_daemon:
+			mid_serve:
+				cmd: 'bundle'
+				args: [ 'exec', 'middleman', 'server' ]
+				options:
+					verbose: true
+		
+		watch:
+			typescript:
+				files: ['source_typescript/*.ts']
+				tasks: ['typescript']
+
 		typescript:
 			base:
 				src: ['source_typescript/main.ts']
@@ -21,5 +33,6 @@ module.exports = (grunt) ->
 				options:
 					command: 'build'
 
-	grunt.registerTask 'default', ['typescript' ]
+	grunt.registerTask 'default', [ 'typescript', 'watch' ]
+	grunt.registerTask 'serve', [ 'typescript', 'external_daemon:mid_serve', 'watch' ]
 	grunt.registerTask 'build', ['typescript', 'middleman:build' ]
