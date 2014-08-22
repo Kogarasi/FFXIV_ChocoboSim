@@ -10,7 +10,7 @@ $(function () {
     image.onload = function () {
         context.drawImage(this, 0, 0);
     };
-    image.src = '/images/chocobo.png';
+    image.src = 'images/chocobo.png';
 
     $(".color-btn").click(function () {
         var color = $(this).css("backgroundColor");
