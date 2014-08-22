@@ -2,9 +2,11 @@ doctype html
 title FFXIV Chocobo Sim
 
 link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
+= stylesheet_link_tag "index"
 
 script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"
 script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"
+= javascript_include_tag "jquery.color-2.1.2.min"
+= javascript_include_tag "main"
 
-.container
-	== yield
+== yield

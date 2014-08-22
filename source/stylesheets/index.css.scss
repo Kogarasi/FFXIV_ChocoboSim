@@ -1,0 +1,10 @@
+@import "compass";
+
+.color-btn {
+	
+	a {
+		color: black;
+		@include text-shadow( 1px 1px 1px gray );
+	}
+	
+}

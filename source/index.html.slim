@@ -1,1 +1,11 @@
-| Hello world
+.col-sm-3
+	ul.nav.nav-pills.nav-stacked
+		- data.color.each do |name,val|
+			li.color-btn style="background-color: rgb( #{val.r}, #{val.g}, #{val.b} )" alt=name
+				a href="#" #{name}
+
+.col-sm-9
+	canvas#chocobo width="300" height="300"
+
+- defaultColor = data.color.first[1]
+.defaultColor.hidden style="background-color: rgb( #{defaultColor.r}, #{defaultColor.g}, #{defaultColor.b} )"
